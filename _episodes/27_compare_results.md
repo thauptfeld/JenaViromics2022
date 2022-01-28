@@ -169,7 +169,7 @@ We might also want to take a look at which tools make the most similar predictio
 > ## Challenge: Distance and Correlation Matrices
 > Find out which tools make the most similar predictions by making a euclidean distance matrix and a preason correlation matrix for all four tools.
 > 
-> **Hint** Don't forget to exclude the first column from the distance function.
+> **Hint** Don't forget to exclude the first column from the distance and correlation functions.
 > 
 > > ## Solution
 > > ~~~
@@ -223,7 +223,9 @@ Sensitivity= TP/(TP+FN)
 If you have some extra time before our shared discussion, you can make some additional heatmaps for different ranges of contigs.
 You can also try and see how the correlation matrix changes when you include only longer/shorter contigs.
 
-For the second part of this section, we will have a shared discussion about our research projects and how to choose the right tool for our purposes.
+
+
+###For the second part of this section, we will have a shared discussion about our research projects and how to choose the right tool for our purposes.
 
 
 {% include links.md %}
