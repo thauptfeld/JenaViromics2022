@@ -28,7 +28,7 @@ $ python3 reformat_virsorter_result.py /path/to/virsorter_result_file.csv /path/
 # This only works if the VirSorter result file is in its original place in the virsorter-results folder
 # If you run the script from within the virsorter-results folder, give the filepath as ./VIRSorter_global-phage-signal.csv
 ~~~
-{: .bash}
+{: .language-bash}
 
 You can now read the new csv file into R, e.g. as *predVirSorter*.
 
@@ -67,6 +67,7 @@ Now, let's compare all the tools directly to each other. Again, all the exercise
 > > # Add the VirSorter results
 > > > pred$virsorter<-predVirSorter$pred
 > > ~~~
+> >{: .language-R}
 > {: .solution}
 {: .challenge}
 
@@ -102,6 +103,7 @@ We have seen that some tools annotate more contigs as viral than others. However
 > > > ggsave('~/JenaViromics2022/day2/results/contigs_short_binary.png', height=7, width=6)
 > >
 > > ~~~
+> >{: .language-R}
 > {: .solution}
 {: .challenge}
 
@@ -154,6 +156,7 @@ In the next step, do the same as before, but now instead of using a binary measu
 > > > ggsave('~/JenaViromics2022/day2/results/contigs_short_continuous.png', height=7, width=6)
 > >
 > > ~~~
+> >{: .language-R}
 > {: .solution}
 {: .challenge}
 
@@ -185,6 +188,7 @@ We might also want to take a look at which tools make the most similar predictio
 > > > dist.corr<-as.dist(cor(predScores[,2:5], method='pearson'))
 > >
 > > ~~~
+> >{: .language-R}
 > {: .solution}
 {: .challenge}
 
@@ -216,6 +220,7 @@ Sensitivity= TP/(TP+FN)
 > > > 66/9878
 > > [1] 0.006681514
 > > ~~~
+> >{: .language-R}
 > {: .solution}
 {: .challenge}
 
@@ -224,8 +229,7 @@ If you have some extra time before our shared discussion, you can make some addi
 You can also try and see how the correlation matrix changes when you include only longer/shorter contigs.
 
 
-
-###For the second part of this section, we will have a shared discussion about our research projects and how to choose the right tool for our purposes.
+**For the second part of this section, we will have a shared discussion about our research projects and how to choose the right tool for our purposes.**
 
 
 {% include links.md %}
