@@ -43,7 +43,7 @@ $ ln -s ~/JenaViromics2022/day2/tools/VirSorter/wrapper_phage_contigs_sorter_iPl
 $ ln -s ~/JenaViromics2022/day2/tools/VirSorter/Scripts ~/miniconda/envs/virsorter/bin
 
 ~~~
-{: .bash}
+{: .language-bash}
 
 Finally, install metagene_annotator into the conda environment.
 
@@ -51,7 +51,7 @@ Finally, install metagene_annotator into the conda environment.
 # Install metagene_annotator
 $ conda install metagene_annotator -c bioconda
 ~~~
-{: .bash}
+{: .language-bash}
 
 
 Finally, run VirSorter. Note that VirSorter is very particular about its working directory. It is best if it doesn't exist beforehand (VirSorter will create it). If a run fails, then completely remove the working directory before you restart it.
@@ -61,7 +61,7 @@ Finally, run VirSorter. Note that VirSorter is very particular about its working
 # Under the argument --data-dir put the link https://blahblah.com/virsorter-data
 $ wrapper_phage_contigs_sorter_iPlant.pl -f ../../contigs_over_200.fasta --db 1 --wdir ../../results/virsorter --ncpu 1 --data-dir ./virsorter-data
 ~~~
-{: .bash}
+{: .language-bash}
 
 
 If your run fails because "Step 1 failed", then check the error file in ../../results/virsorter/logs/. If the error is "Can't locate Bio/Seq.pm in @inc (you may need to install the Bio::Seq module)...", then you need to copy a perl folder in the virsorter environment folder.
@@ -71,6 +71,7 @@ If your run fails because "Step 1 failed", then check the error file in ../../re
 $ cd ~/miniconda/envs/virsorter/lib/
 $ cp -r perl5/site_perl/5.22.0/Bio/ site_perl/5.26.2/x86_64-linux-thread-multi/
 ~~~
+{: .language-bash}
 
 Then try to run the command again. If you have more problems, let us know.
 Guten Appetit! Eet smakkelijk! Have a good lunch!

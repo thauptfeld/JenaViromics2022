@@ -23,12 +23,10 @@ Then, within the virfinder environment run rstudio.
 # Run rstudio GUI within the virfinder environment
 $ rstudio
 ~~~
-{: .bash}
+{: .language-bash}
 
 
 The next few commands will be in R.
-
-
 
 ~~~
 # Attach the VirFinder package
@@ -40,7 +38,7 @@ The next few commands will be in R.
 # Save the resulting data frame as a comma-separated textfile
 > write.csv(predResult, "~/JenaViromics2022/day2/results/contigs_over_200_virfinder.csv", row.names=F)
 ~~~
-{: .R}
+{: .language-R}
 
 >## Discussion: Logistic Regression
 > Is VirFinder faster or slower than you predicted? What could be the reason for why it is so fast?

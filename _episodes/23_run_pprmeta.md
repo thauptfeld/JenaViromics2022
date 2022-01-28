@@ -21,33 +21,35 @@ Getting PPR-Meta to run is a little more work than DeepVirFinder. First, deactiv
 
 ~~~
 # deactivate deepvir
-$ conda deactivate
+(deepvir)$ conda deactivate
+$
 ~~~
+{: .language-bash}
 
 
 Then, create a conda environment for pprmeta from the file *pprmeta.yaml* (If you cannot remember how to do this, look back to lesson 2.1) and activate the new environment. Afterwards, you have to download the MATLAB Runtime from [this](https://nl.mathworks.com/products/compiler/matlab-runtime.html) website. Make sure that you download the linux version and specifically, version 9.4. Move the zip file into a new folder called "MCR" in your day2 tools folder.
 
 ~~~
 # unzip MCR
-$ unzip MCR_R2018a_glnxa64_installer.zip
+(pprmeta)$ unzip MCR_R2018a_glnxa64_installer.zip
 
 # install MCR into the tools folder
-$ ./install -mode silent -agreeToLicense yes -destinationFolder ~/JenaViromics2022/day2/tools
+(pprmeta)$ ./install -mode silent -agreeToLicense yes -destinationFolder ~/JenaViromics2022/day2/tools
 ~~~
-{: .bash}
+{: .language-bash}
 
 
 Next, download PPR-Meta and make the main script into an executable.
 
 ~~~
 # download PPR-Meta
-$ git clone https://github.com/zhenchengfang/PPR-Meta.git
-$ cd PPR-Meta
+(pprmeta)$ git clone https://github.com/zhenchengfang/PPR-Meta.git
+(pprmeta)$ cd PPR-Meta
 
 # make main script into an executable
-$ chmod u+x ./PPR-Meta
+(pprmeta)$ chmod u+x ./PPR-Meta
 ~~~
-{: .bash}
+{: .language-bash}
 
 
 Finally, we have to edit the so-called LD_LIBRARY_PATH, a variable that contains a list of filepaths. This list helps PPR-Meta to find the MCR files that it needs to run, as the program doesn't "know" where MCR is installed. PPR-Meta provides a small sample dataset that you can test the installation on.
@@ -55,25 +57,25 @@ Finally, we have to edit the so-called LD_LIBRARY_PATH, a variable that contains
 ~~~
 # Add MCR folders to LD_LIBRARY_PATH
 # Note: If you have another version of MCR installed in your conda version, you might need to unset the library path first using: unset LD_LIBRARY_PATH
-$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/JenaViromics2022/day2/tools/v94/runtime/glnxa64
-$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/JenaViromics2022/day2/tools/v94/bin/glnxa64
-$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/JenaViromics2022/day2/tools/v94/sys/os/glnxa64
-$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/JenaViromics2022/day2/tools/v94/extern/bin/glnxa64
+(pprmeta)$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/JenaViromics2022/day2/tools/v94/runtime/glnxa64
+(pprmeta)$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/JenaViromics2022/day2/tools/v94/bin/glnxa64
+(pprmeta)$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/JenaViromics2022/day2/tools/v94/sys/os/glnxa64
+(pprmeta)$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/JenaViromics2022/day2/tools/v94/extern/bin/glnxa64
 
 # You can test whether PPR-Meta is running correctly by running
-$ cd ~/JenaViromics2022/day2/tools/v94/PPR-Meta
-$ ./PPR-Meta example.fna results.csv
+(pprmeta)$ cd ~/JenaViromics2022/day2/tools/v94/PPR-Meta
+(pprmeta)$ ./PPR-Meta example.fna results.csv
 ~~~
-{: .bash}
+{: .language-bash}
 
 
 If the test run finishes successfully, then you can run PPR-Meta on the truncated contig file.
 
 ~~~
 # Run PPR-Meta on contigs
-$ ./PPR-Meta ../../contigs_over_200.fasta ../../results/contigs_over_200_pprmeta.csv
+(pprmeta)$ ./PPR-Meta ../../contigs_over_200.fasta ../../results/contigs_over_200_pprmeta.csv
 ~~~
-{: .bash}
+{: .language-bash}
 
 PPR-Meta is very fast - your run should only take a couple of minutes. Compared to DeepVirFinder, which ran for almost an hour on the same dataset, this is very short. Can you think of why there is such a difference in runtime?
 

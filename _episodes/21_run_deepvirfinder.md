@@ -33,7 +33,7 @@ $ tar zxvf conda_environments.tgz
 # create the conda environment for DeepVirFinder from deepvir.yaml
 $ conda env create -f deepvir.yaml
 ~~~
-{: .bash}
+{: .language-bash}
 
 
 This will take a couple of minutes. In the meantime, you can open another terminal window and download the DeepVirFinder github repository that contains the scripts.
@@ -43,7 +43,7 @@ This will take a couple of minutes. In the meantime, you can open another termin
 $ git clone https://github.com/jessieren/DeepVirFinder
 $ cd DeepVirFinder
 ~~~
-{: .bash}
+{: .language-bash}
 
 The file dvf.py contains the code to run DeepVirFinder. Once the conda environment has been successfully created, run DeepVirFinder on the contigs you have assembled yesterday. We want to focus on the most reliable contigs and will therefore only input contigs that are over 200 nucleotides in length (DeepVirFinder actually has an option that makes it pass sequences below a certain length, but some of the other tools do not have that option).
 
@@ -57,6 +57,7 @@ $ conda activate deepvir
 # Run DeepVirFinder
 (deepvir)$ python3 dvf.py -i /path/to/your/contigs.fasta -o ../../results/ -c 1
 ~~~
+{: .language-bash}
 
 DeepVirFinder will now start writing lines containing which part of the file it is processing.
 
