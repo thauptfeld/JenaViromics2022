@@ -59,6 +59,7 @@ $ conda activate deepvir
 ~~~
 {: .language-bash}
 
+
 DeepVirFinder will now start writing lines containing which part of the file it is processing.
 
 While DeepVirFinder is running, listen to the lecture.
