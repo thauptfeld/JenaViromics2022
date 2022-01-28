@@ -84,8 +84,10 @@ The results of VirFinder should already be in your R workspace in a dataframe ca
 
 >## Discussion: Decision boundraries
 > With VirFinder and DeepVirFinder, you have seen that the decision boundrary is somewhat up to the user. How will moving the decision boundrary "up" (i.e. making it stricter) or "down" affect the results? 
-> If instead of a viromic dataset you were looking at a gut microbiome dataset, how would that affect your choice for the decision boundrary?
-> Can you already tell which of these three tools is the best?
+>
+>If instead of a viromic dataset you were looking at a gut microbiome dataset, how would that affect your choice for the decision boundrary?
+>
+>Can you already tell which of these three tools is the best?
 {: .discussion}
 
 {% include links.md %}

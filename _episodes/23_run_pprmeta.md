@@ -78,7 +78,9 @@ $ ./PPR-Meta ../../contigs_over_200.fasta ../../results/contigs_over_200_pprmeta
 PPR-Meta is very fast - your run should only take a couple of minutes. Compared to DeepVirFinder, which ran for almost an hour on the same dataset, this is very short. Can you think of why there is such a difference in runtime?
 
 To better understand the differences between the tools, read the description of how they work in their publications.
+
 [PPR-Meta](https://academic.oup.com/gigascience/article/8/6/giz066/5521157) - Read at least the sections **Dataset construction** and **Mathematical model of DNA sequences**
+
 [DeepVirFinder](https://link.springer.com/article/10.1007/s40484-019-0187-4) - Read the sections **DeepVirFinder: viral sequences prediction using convolutional neural networks**, **Determining the optimal model for DeepVirFinder**, and the first two paragraphs of section **Predicting viral sequences using convolutional neural networks** (don't worry about the math to much).
 
 
