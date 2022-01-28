@@ -44,6 +44,7 @@ The next few commands will be in R.
 
 >## Discussion: Logistic Regression
 > Is VirFinder faster or slower than you predicted? What could be the reason for why it is so fast?
+> 
 > Where would you draw the decision boundrary?
 {: .discussion}
 

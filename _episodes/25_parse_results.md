@@ -40,6 +40,7 @@ The results of VirFinder should already be in your R workspace in a dataframe ca
 
 >## Discussion: Comparing Tools
 > Look at the three data frames you have created. What kind of information can you find in there? Is it clear to you what each of the values mean?
+> 
 > Think of ways to compare the results of the three tools. How would you decide which of these three tools is best suited for your research?
 {: .discussion}
 

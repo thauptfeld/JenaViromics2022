@@ -17,7 +17,7 @@ Identifying viral sequences from assembled metagenomes is not limited to entirel
 
 >## Discussion: Detecting prophages
 > Can you think of reasons why prophages might be easier to detect than free phages?
-
+{: .discussion}
 
 
 {% include links.md %}

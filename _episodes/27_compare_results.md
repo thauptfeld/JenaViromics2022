@@ -107,8 +107,11 @@ We have seen that some tools annotate more contigs as viral than others. However
 
 >## Discussion: Consensus
 > Do the tools mostly agree on which sequences are viral? 
-> How would you explain that?
+>
+>How would you explain that?
+>
 > Is the degree of consensus the same across different contig lengths?
+> 
 > What is your expectation about the scores for the contigs where the tools agree/disagree?
 {: .discussion}
 
