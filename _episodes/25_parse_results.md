@@ -1,5 +1,5 @@
 ---
-title: "Discussion: Comparing Virus Identification Tools"
+title: "Comparing Virus Identification Tools"
 teaching: 15
 exercises: 15
 questions:
@@ -28,11 +28,11 @@ The results of VirFinder should already be in your R workspace in a dataframe ca
 > >
 > >
 > > ~~~
-> > \# Load DeepVirFinder results
-> > \> predDeepVir <- read.csv('~/JenaViromics2022/day2/results/contigs_over_200_deepvirfinder.csv')
+> > # Load DeepVirFinder results
+> > > predDeepVir <- read.csv('~/JenaViromics2022/day2/results/contigs_over_200_deepvirfinder.csv')
 > >  
-> > \# Load PPR-Meta results
-> > \> predPPRmeta <- read.table('~/JenaViromics2022/day2/results/contigs_over_200_pprmeta.txt', header=T)
+> > # Load PPR-Meta results
+> > > predPPRmeta <- read.table('~/JenaViromics2022/day2/results/contigs_over_200_pprmeta.txt', header=T)
 > > ~~~
 > {: .solution}
 {: .challenge}
@@ -50,33 +50,33 @@ The results of VirFinder should already be in your R workspace in a dataframe ca
 > >
 > >For PPR-Meta, counting the number of sequences annotated as phages is the most straightforward.
 > > ~~~
-> > \# Sum up all the rows that are annotated as a phage
-> > \> sum(predPPRmeta$Possible_source =='phage')
-> > \[1\] 5838
+> > # Sum up all the rows that are annotated as a phage
+> > > sum(predPPRmeta$Possible_source =='phage')
+> > [1] 5838
 > > ~~~
 > > 
 > > For VirFinder and DeepVirFinder, counting the number of sequences annotated as phages is more complicated. The simplest way would be to count how many sequences have a score above 0.5.
 > > ~~~
-> > \# Sum up all the rows that have a score above 0.5
-> > \> sum(predDeepVirFinder$score > 0.5)
-> > \[1\] 6203
-> > \> sum(predVirFinder$score > 0.5)
-> > \[1\] 5578
+> > # Sum up all the rows that have a score above 0.5
+> > > sum(predDeepVirFinder$score > 0.5)
+> > [1] 6203
+> > > sum(predVirFinder$score > 0.5)
+> > [1] 5578
 > > ~~~
 > >
 > > However, you might have seen that there is also a p-value available for the VirFinder and DeepVirFinder results. You might want to use them instead to decide whether you test your prediction.
 > > ~~~
-> > \# Sum up all the rows that have a p-value of max 0.05
-> > \> sum(predDeepVirFinder$pvalue <= 0.05)
-> > \[1\] 4304
-> > \> sum(predVirFinder$pvalue <= 0.05)
-> > \[1\] 3048
+> > # Sum up all the rows that have a p-value of max 0.05
+> > > sum(predDeepVirFinder$pvalue <= 0.05)
+> > [1] 4304
+> > > sum(predVirFinder$pvalue <= 0.05)
+> > [1] 3048
 > >
-> > \# Or, you might want to be even stricter and count only sequences with a p-value of max 0.01
-> > \> sum(predDeepVirFinder$pvalue <= 0.01)
-> > \[1\] 1918
-> > \> sum(predVirFinder$pvalue <= 0.01)
-> > \[1\] 1336
+> > # Or, you might want to be even stricter and count only sequences with a p-value of max 0.01
+> > > sum(predDeepVirFinder$pvalue <= 0.01)
+> > [1] 1918
+> > > sum(predVirFinder$pvalue <= 0.01)
+> > [1] 1336
 > > ~~~
 > {: .solution}
 {: .challenge}

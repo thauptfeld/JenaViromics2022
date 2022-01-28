@@ -45,27 +45,27 @@ Now, let's compare all the tools directly to each other. Again, all the exercise
 > >
 > >
 > > ~~~
-> > \# Create the data frame and rename the column for the contig names
-> > \> pred<-data.frame(predDeepVirFinder$name)
-> > \> names(pred)[names(pred) == "predDeepVirFinder.name"] <- "name"
+> > # Create the data frame and rename the column for the contig names
+> > > pred<-data.frame(predDeepVirFinder$name)
+> > > names(pred)[names(pred) == "predDeepVirFinder.name"] <- "name"
 > >  
-> > \# Add the PPR-Meta results
-> > \> pred$pprmeta<-predPPRmeta$Possible_source
+> > # Add the PPR-Meta results
+> > > pred$pprmeta<-predPPRmeta$Possible_source
 > >
-> > \# Change the values in the pprmeta column so that phage means 1 and not a phage means 0
-> > \> pred$pprmeta[pred$pprmeta =='phage'] <- 1
-> > \> pred$pprmeta[pred$pprmeta !=1] <- 0
+> > # Change the values in the pprmeta column so that phage means 1 and not a phage means 0
+> > > pred$pprmeta[pred$pprmeta =='phage'] <- 1
+> > > pred$pprmeta[pred$pprmeta !=1] <- 0
 > >
-> > \# Add the DeepVirFinder and VirFinder Results
-> > \> pred$virfinder<-predVirFinder$score
-> > \> pred$virfinder[pred$virfinder >=0.5] <- 1
-> > \> pred$virfinder[pred$virfinder  <0.5] <- 0
+> > # Add the DeepVirFinder and VirFinder Results
+> > > pred$virfinder<-predVirFinder$score
+> > > pred$virfinder[pred$virfinder >=0.5] <- 1
+> > > pred$virfinder[pred$virfinder  <0.5] <- 0
 > >
-> > \> pred$deepvirfinder<-predDeepVirFinder$score
-> > \> pred$deepvirfinder[pred$deepvirfinder >=0.5] <- 1
-> > \> pred$deepvirfinder[pred$deepvirfinder  <0.5] <- 0
+> > > pred$deepvirfinder<-predDeepVirFinder$score
+> > > pred$deepvirfinder[pred$deepvirfinder >=0.5] <- 1
+> > > pred$deepvirfinder[pred$deepvirfinder  <0.5] <- 0
 > > # Add the VirSorter results
-> > \> pred$virsorter<-predVirSorter$pred
+> > > pred$virsorter<-predVirSorter$pred
 > > ~~~
 > {: .solution}
 {: .challenge}
@@ -79,27 +79,27 @@ We have seen that some tools annotate more contigs as viral than others. However
 > >
 > >
 > > ~~~
-> > \# Select three ranges of 50 contigs each
-> > \> pred.long<-pred[1:50,]
-> > \> pred.medium<-pred[2500:2550,]
-> > \> pred.short<-pred[9828:9878,]
+> > # Select three ranges of 50 contigs each
+> > > pred.long<-pred[1:50,]
+> > > pred.medium<-pred[2500:2550,]
+> > > pred.short<-pred[9828:9878,]
 > >  
-> > \# Attach the packages necessary for plotting and prepare the data
-> > \> library(ggplot2)
-> > \> library(reshape2)
-> > \> pred.l.melt<-melt(pred.long, id="name")
-> > \> pred.m.melt<-melt(pred.medium, id="name")
-> > \> pred.s.melt<-melt(pred.short, id="name")
+> > # Attach the packages necessary for plotting and prepare the data
+> > > library(ggplot2)
+> > > library(reshape2)
+> > > pred.l.melt<-melt(pred.long, id="name")
+> > > pred.m.melt<-melt(pred.medium, id="name")
+> > > pred.s.melt<-melt(pred.short, id="name")
 > >
-> > \# Plot the three heatmaps, save, and compare
-> > \> ggplot(pred.l.melt, aes(variable, name, fill=value))+geom_tile()
-> > \> ggsave('~/JenaViromics2022/day2/results/contigs_large_binary.png', height=7, width=6)
+> > # Plot the three heatmaps, save, and compare
+> > > ggplot(pred.l.melt, aes(variable, name, fill=value))+geom_tile()
+> > > ggsave('~/JenaViromics2022/day2/results/contigs_large_binary.png', height=7, width=6)
 > >
-> > \> ggplot(pred.m.melt, aes(variable, name, fill=value))+geom_tile()
-> > \> ggsave('~/JenaViromics2022/day2/results/contigs_medium_binary.png', height=7, width=6)
+> > > ggplot(pred.m.melt, aes(variable, name, fill=value))+geom_tile()
+> > > ggsave('~/JenaViromics2022/day2/results/contigs_medium_binary.png', height=7, width=6)
 > >
-> > \> ggplot(pred.s.melt, aes(variable, name, fill=value))+geom_tile()
-> > \> ggsave('~/JenaViromics2022/day2/results/contigs_short_binary.png', height=7, width=6)
+> > > ggplot(pred.s.melt, aes(variable, name, fill=value))+geom_tile()
+> > > ggsave('~/JenaViromics2022/day2/results/contigs_short_binary.png', height=7, width=6)
 > >
 > > ~~~
 > {: .solution}
@@ -120,34 +120,34 @@ In the next step, do the same as before, but now instead of using a binary measu
 > >
 > >
 > > ~~~
-> > \# Create the data frame of prediction scores
-> > \> predScores<-pred
-> > \> predScores$deepvirfinder<-predDeepVirFinder$score
-> > \> predScores$virfinder<-predVirFinder$score
-> > \> predScores$pprmeta<-predPPRmeta$phage_score
-> > \> predScores$virsorter<-predVirSorter$score
+> > # Create the data frame of prediction scores
+> > > predScores<-pred
+> > > predScores$deepvirfinder<-predDeepVirFinder$score
+> > > predScores$virfinder<-predVirFinder$score
+> > > predScores$pprmeta<-predPPRmeta$phage_score
+> > > predScores$virsorter<-predVirSorter$score
 > >
-> > \# Select three ranges of 50 contigs each
-> > \> predScores.long<-predScores[1:50,]
-> > \> predScores.medium<-predScores[2500:2550,]
-> > \> predScores.short<-predScores[9828:9878,]
+> > # Select three ranges of 50 contigs each
+> > > predScores.long<-predScores[1:50,]
+> > > predScores.medium<-predScores[2500:2550,]
+> > > predScores.short<-predScores[9828:9878,]
 > >  
-> > \# Prepare the data for plotting
-> > \> predScores.l.melt<-melt(predScores.long, id="name")
-> > \> predScores.m.melt<-melt(predScores.medium, id="name")
-> > \> predScores.s.melt<-melt(predScores.short, id="name")
+> > # Prepare the data for plotting
+> > > predScores.l.melt<-melt(predScores.long, id="name")
+> > > predScores.m.melt<-melt(predScores.medium, id="name")
+> > > predScores.s.melt<-melt(predScores.short, id="name")
 > >
-> > \# Plot the three heatmaps, save, and compare
-> > \# The color palette in scale_viridis_c is optional. Scale_viridis_c is a continuous colour scale that works well for distinguishing colours
-> > \# If you prefer a binned colour scale, you can also consider using scale_viridis_b 
-> > \> ggplot(predScores.l.melt, aes(variable, name, fill=value))+geom_tile()+scale_viridis_c()
-> > \> ggsave('~/JenaViromics2022/day2/results/contigs_large_continuous.png', height=7, width=6)
+> > # Plot the three heatmaps, save, and compare
+> > # The color palette in scale_viridis_c is optional. Scale_viridis_c is a continuous colour scale that works well for distinguishing colours
+> > # If you prefer a binned colour scale, you can also consider using scale_viridis_b 
+> > > ggplot(predScores.l.melt, aes(variable, name, fill=value))+geom_tile()+scale_viridis_c()
+> > > ggsave('~/JenaViromics2022/day2/results/contigs_large_continuous.png', height=7, width=6)
 > >
-> > \> ggplot(predScores.m.melt, aes(variable, name, fill=value))+geom_tile()+scale_viridis_c()
-> > \> ggsave('~/JenaViromics2022/day2/results/contigs_medium_continuous.png', height=7, width=6)
+> > > ggplot(predScores.m.melt, aes(variable, name, fill=value))+geom_tile()+scale_viridis_c()
+> > > ggsave('~/JenaViromics2022/day2/results/contigs_medium_continuous.png', height=7, width=6)
 > >
-> > \> ggplot(predScores.s.melt, aes(variable, name, fill=value))+geom_tile()+scale_viridis_c()
-> > \> ggsave('~/JenaViromics2022/day2/results/contigs_short_continuous.png', height=7, width=6)
+> > > ggplot(predScores.s.melt, aes(variable, name, fill=value))+geom_tile()+scale_viridis_c()
+> > > ggsave('~/JenaViromics2022/day2/results/contigs_short_continuous.png', height=7, width=6)
 > >
 > > ~~~
 > {: .solution}
@@ -168,16 +168,16 @@ We might also want to take a look at which tools make the most similar predictio
 > 
 > > ## Solution
 > > ~~~
-> > \# Make a euclidean distance matrix for binary annotation
-> > \> pred.t <- t(pred[,2:5])
-> > \> dist.binary<-dist(pred.t, method="euclidean")
+> > # Make a euclidean distance matrix for binary annotation
+> > > pred.t <- t(pred[,2:5])
+> > > dist.binary<-dist(pred.t, method="euclidean")
 > >
-> > \# Make a euclidean distance matrix for continuous annotation
-> > \> predScores.t <- t(predScores[,2:5])
-> > \> dist.cont<-dist(predScores.t, method="euclidean")
+> > # Make a euclidean distance matrix for continuous annotation
+> > > predScores.t <- t(predScores[,2:5])
+> > > dist.cont<-dist(predScores.t, method="euclidean")
 > >
-> > \# Make a correlation matrix for continuous annotation
-> > \> dist.corr<-as.dist(cor(predScores[,2:5], method='pearson'))
+> > # Make a correlation matrix for continuous annotation
+> > > dist.corr<-as.dist(cor(predScores[,2:5], method='pearson'))
 > >
 > > ~~~
 > {: .solution}
@@ -193,22 +193,22 @@ Sensitivity= TP/(TP+FN)
 > 
 > > ## Solution
 > > ~~~
-> > \# PPR-Meta
-> > \> 5838/9878
+> > # PPR-Meta
+> > > 5838/9878
 > > [1] 0.5910103
 > >
-> > \# VirFinder
-> > \> 5578/9878
+> > # VirFinder
+> > > 5578/9878
 > > [1] 0.5646892
 > >
-> > \# DeepVirFinder
-> > \> 6203/9878
+> > # DeepVirFinder
+> > > 6203/9878
 > > [1] 0.6279611
 > >
-> > \# VirSorter: number of sequences annotated as viral 
-> > \> sum(predVirSorter$pred==1)
+> > # VirSorter: number of sequences annotated as viral 
+> > > sum(predVirSorter$pred==1)
 > > [1] 66
-> > \> 66/9878
+> > > 66/9878
 > > [1] 0.006681514
 > > ~~~
 > {: .solution}
