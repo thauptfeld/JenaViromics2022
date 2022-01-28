@@ -9,7 +9,7 @@ questions:
 objectives:
 - "Read the results so far into data frames."
 - "Find out how many viral sequences each tool has predicted."
-- "Discuss how moving the decision boundrary in VirFinder and DeepVirFinder affects your result.
+- "Discuss how moving the decision boundrary in VirFinder and DeepVirFinder affects your result."
 keypoints:
 - "Despite out data being almost exclusively viral, the tools identify max. 2/3 of the sequences as viral."
 - "Making the decision boundrary less strict will include more sequences, which might seem like an advantage in this case. However, if we were working with a mixed metagenomic dataset, this would mean that we would falsely annotate microbial sequences as viral."
@@ -41,7 +41,7 @@ The results of VirFinder should already be in your R workspace in a dataframe ca
 >## Discussion: Comparing Tools
 > Look at the three data frames you have created. What kind of information can you find in there? Is it clear to you what each of the values mean?
 > Think of ways to compare the results of the three tools. How would you decide which of these three tools is best suited for your research?
-
+{: .discussion}
 
 > ## Challenge: Counting phage annotations
 > One way to compare tools would be to compare how many sequences are annotated as phages. Do that for DeepVirFinder, PPR-Meta, and VirFinder. Given what you know about the dataset: How many sequences do you expect to be viral? How many of the 9878 contigs are annotated as viral by each tool?
@@ -86,6 +86,6 @@ The results of VirFinder should already be in your R workspace in a dataframe ca
 > With VirFinder and DeepVirFinder, you have seen that the decision boundrary is somewhat up to the user. How will moving the decision boundrary "up" (i.e. making it stricter) or "down" affect the results? 
 > If instead of a viromic dataset you were looking at a gut microbiome dataset, how would that affect your choice for the decision boundrary?
 > Can you already tell which of these three tools is the best?
-
+{: .discussion}
 
 {% include links.md %}

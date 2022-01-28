@@ -110,6 +110,7 @@ We have seen that some tools annotate more contigs as viral than others. However
 > How would you explain that?
 > Is the degree of consensus the same across different contig lengths?
 > What is your expectation about the scores for the contigs where the tools agree/disagree?
+{: .discussion}
 
 In the next step, do the same as before, but now instead of using a binary measure (each sequence either is annotated as viral or not), use a continuous measure, such as the score. Make sure to use the same rows as before.
 
@@ -155,6 +156,7 @@ In the next step, do the same as before, but now instead of using a binary measu
 
 >## Discussion: Differences in Score
 > Compare the heatmaps of continuous scores to the binary ones. Focus on the contigs for which the tools disagree. Are the scores more ambiguous for these contigs?
+{: .discussion}
 
 Pick out 1-5 contigs that you find interesting based on the tool predictions. Grab their sequences from the contig fasta file and go to the [BLAST website](https://blast.ncbi.nlm.nih.gov/Blast.cgi). Pick out one or two BLAST flavours that you deem appropriate and BLAST the interesting contigs. If you have questions about running BLAST, don't hesitate to ask one of us.
 What kind of organisms do you find in your hits?

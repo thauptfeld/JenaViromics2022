@@ -22,7 +22,7 @@ The last virus identification tool, which we will run over lunch, is called VirS
 >
 > > ## Solution
 > > VirFinder uses:
-> > 1. an enrichmnt of short genes
+> > 1. an enrichment of short genes
 > > 2. depletion in strand switch
 > {: .solution}
 {: .challenge}
