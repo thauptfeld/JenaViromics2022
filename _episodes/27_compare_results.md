@@ -67,7 +67,7 @@ Now, let's compare all the tools directly to each other. Again, all the exercise
 > > # Add the VirSorter results
 > > > pred$virsorter<-predVirSorter$pred
 > > ~~~
-> >{: .language-R}
+> >{: .language-r}
 > {: .solution}
 {: .challenge}
 
@@ -103,7 +103,7 @@ We have seen that some tools annotate more contigs as viral than others. However
 > > > ggsave('~/JenaViromics2022/day2/results/contigs_short_binary.png', height=7, width=6)
 > >
 > > ~~~
-> >{: .language-R}
+> >{: .language-r}
 > {: .solution}
 {: .challenge}
 
@@ -156,7 +156,7 @@ In the next step, do the same as before, but now instead of using a binary measu
 > > > ggsave('~/JenaViromics2022/day2/results/contigs_short_continuous.png', height=7, width=6)
 > >
 > > ~~~
-> >{: .language-R}
+> >{: .language-r}
 > {: .solution}
 {: .challenge}
 
@@ -188,7 +188,7 @@ We might also want to take a look at which tools make the most similar predictio
 > > > dist.corr<-as.dist(cor(predScores[,2:5], method='pearson'))
 > >
 > > ~~~
-> >{: .language-R}
+> >{: .language-r}
 > {: .solution}
 {: .challenge}
 
@@ -220,7 +220,7 @@ Sensitivity= TP/(TP+FN)
 > > > 66/9878
 > > [1] 0.006681514
 > > ~~~
-> >{: .language-R}
+> >{: .language-r}
 > {: .solution}
 {: .challenge}
 

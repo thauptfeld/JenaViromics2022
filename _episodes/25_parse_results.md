@@ -34,7 +34,7 @@ The results of VirFinder should already be in your R workspace in a dataframe ca
 > > # Load PPR-Meta results
 > > > predPPRmeta <- read.table('~/JenaViromics2022/day2/results/contigs_over_200_pprmeta.txt', header=T)
 > > ~~~
-> >{: .language-R}
+> >{: .language-r}
 > {: .solution}
 {: .challenge}
 
@@ -56,7 +56,7 @@ The results of VirFinder should already be in your R workspace in a dataframe ca
 > > > sum(predPPRmeta$Possible_source =='phage')
 > > [1] 5838
 > > ~~~
-> >{: .language-R}
+> >{: .language-r}
 > > 
 > > For VirFinder and DeepVirFinder, counting the number of sequences annotated as phages is more complicated. The simplest way would be to count how many sequences have a score above 0.5.
 > > ~~~
@@ -66,7 +66,7 @@ The results of VirFinder should already be in your R workspace in a dataframe ca
 > > > sum(predVirFinder$score > 0.5)
 > > [1] 5578
 > > ~~~
-> >{: .language-R}
+> >{: .language-r}
 > >
 > > However, you might have seen that there is also a p-value available for the VirFinder and DeepVirFinder results. You might want to use them instead to decide whether you test your prediction.
 > > ~~~
@@ -82,7 +82,7 @@ The results of VirFinder should already be in your R workspace in a dataframe ca
 > > > sum(predVirFinder$pvalue <= 0.01)
 > > [1] 1336
 > > ~~~
-> >{: .language-R}
+> >{: .language-r}
 > {: .solution}
 {: .challenge}
 
