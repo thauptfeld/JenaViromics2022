@@ -1,6 +1,7 @@
 ---
 title: "Lunch Break"
-Break: 50
+teaching: 50
+exercises: 0
 questions:
 - "What is the tastiest food we can find in the vicinity?"
 objectives:

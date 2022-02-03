@@ -1,7 +1,7 @@
 ---
 title: "Compare Results for four tools"
 teaching: 60
-exercises: 45
+exercises: 60
 questions:
 - ""
 - "" 
