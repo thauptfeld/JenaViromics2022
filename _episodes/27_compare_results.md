@@ -3,14 +3,16 @@ title: "Compare Results for four tools"
 teaching: 60
 exercises: 60
 questions:
-- ""
-- "" 
+- "How different are the predictions of the tools per contig?"
+- "How sensitive are the different tools we used?" 
 objectives:
-- ""
-- ""
+- "Assess whether the tools agree or disagree on which contigs are viral."
+- "Compare the sensitivity of virus detection for the four tools."
+- "Find out which tools make the most similar predictions."
 keypoints:
-- ""
-- ""
+- "The different tools often agree, but often disagree on whether a contig is viral. This is to an extent affected by the length of the contig."
+- "Even for current state-of-the-art tools, getting a high sensitivity is hard."
+- "Some tools make more similar predictions than others."
 ---
 
 Now that VirSorter has finished, take a look at the results (the main results file is called *VIRSorter_global-phage-signal.csv*. What kind of information can you find there?
