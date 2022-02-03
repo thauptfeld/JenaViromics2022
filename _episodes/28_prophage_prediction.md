@@ -62,6 +62,7 @@ Look back at the evidence that VirSorter uses to determine whether a contig is v
 > >
 > > The intergenic spaces between the genes are very short, sometimes they even overlap. If you compare the length of the intergenic regions of the predicted prophage to the lenght of the intergenic regions outside of the predicted prophage, you will see that they are very similar. This is probably due to the fact that our dataset is a virome and so we expect almost all of our contigs to be viral and have short intergenic regions.
 > >
+> {: .solution}
 {: .challenge}
 
 
